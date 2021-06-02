@@ -4,7 +4,9 @@
     Author     : dyadlows
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "sql" uri = "http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,6 +24,8 @@
             <br>
             <input type="submit" value="Say Hello">
         </form>
-        <p>${message}</p>
+            <c:if test="${invalid}">
+        <p>Invalid entry. Please enter both a first and last name.</p>
+            </c:if>
     </body>
 </html>
